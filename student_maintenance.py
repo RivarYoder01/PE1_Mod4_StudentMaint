@@ -43,7 +43,7 @@ def list_students(students):
 
     print('List Students')
     print('-------------')
-
+    print(students)
     return
 
 
