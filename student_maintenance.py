@@ -14,13 +14,13 @@ Example of students = {
     }
 }
 
-GitHub URL: UPDATE YOUR REPOSITORY URL
+GitHub URL: https://github.com/lindllgrn/PE1_Mod4_StudentMaint
 """
 
 import data_validation as dv
 
 # the following are module level dunders (metadata) for the authorship information
-__author__ = 'UPDATE YOUR NAME(S)'
+__author__ = 'Rivar Yoder | Lindsay Green'
 __version__ = '1.0'
 __date__ = '2024.02.12'
 __status__ = 'Development'
@@ -43,7 +43,11 @@ def list_students(students):
 
     print('List Students')
     print('-------------')
-    print(students)
+
+    # for student_id, student_name in students.items():
+    # first_name, last_name = student_name.values
+    # student_name(**students)
+
     return
 
 
@@ -69,6 +73,13 @@ def add_student(students, next_student_id):
 
     print('Add Student')
     print('-----------')
+
+    first_name = input('Enter the Students First Name:')
+    last_name = input('Enter the Students Last Name:')
+
+    students[next_student_id] = {'first_name': first_name, 'last_name': last_name}
+
+    print('Student ID#', next_student_id, first_name, last_name, 'Was Added')
 
     return
 
