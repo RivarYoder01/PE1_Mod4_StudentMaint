@@ -52,7 +52,6 @@ def list_students(students):
         # ...
 
         input("Press enter to continue...")
-    return
 
 
 def add_student(students, next_student_id):
