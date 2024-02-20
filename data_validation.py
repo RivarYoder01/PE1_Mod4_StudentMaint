@@ -22,6 +22,8 @@ def get_string(prompt):
     while True:
         user_input = input(f'{prompt}: ')
 
+        user_input = user_input.strip()
+
         if user_input > '':
             return user_input
 

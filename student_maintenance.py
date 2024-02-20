@@ -25,6 +25,9 @@ __version__ = '1.0'
 __date__ = '2024.02.12'
 __status__ = 'Development'
 
+DASH_LENGTH = 35
+COLUMN_LENGTH = 60
+
 
 def list_students(students):
     """
@@ -41,17 +44,19 @@ def list_students(students):
     :return: None
     """
 
-    print('List Students')
-    print('-------------')
+    print(f'{"List Students":>10}')
+    print(f'{"-------------":>10}')
 
-    # for student_id, student_name in students.items():
-    # first_name, last_name = student_name.values
-    # student_name(**students)
+    print(f'{"ID": >5} {"First Name":>13} {"Last Name":>10}')
+    print('=' * DASH_LENGTH)
 
-        # this will loop through the tuple to display all the students inside
-        # ...
+    for id, student_data in students.items():
+        first_name, last_name = student_data.values()
+        first_name = first_name.title()
+        last_name = last_name.title()
+        print(f'{id:>5} {first_name:>10} {last_name:>10}')
 
-        input("Press enter to continue...")
+    input("Press enter to continue...")
 
 
 def add_student(students, next_student_id):
@@ -87,7 +92,7 @@ def add_student(students, next_student_id):
     return
 
 
-def update_student(students, student_id):
+def update_student(students):
     """
     It will first check to see if there is any student data, and notify the user if no data is found.
     It will then prompt the user for a valid student ID to be updated from the 2D list
@@ -117,13 +122,13 @@ def update_student(students, student_id):
     print('Update Student')
     print('--------------')
 
-    # student_id = input('Please enter the Student ID to be updated:')
+    student_id = dv.get_num('Please enter the Student ID to be updated', data_type="int")
 
     student = students[student_id]
     first_name, last_name = student.values()
 
     new_first_name = input(f'Please enter the Student\'s First Name or press enter to keep {first_name}: ').title()
-    new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep: {last_name}').title()
+    new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep {last_name}: ').title()
 
     if new_first_name > '':
         student['first_name'] = new_first_name
@@ -134,6 +139,9 @@ def update_student(students, student_id):
     if new_first_name == '' and new_last_name == '':
         print('No Data Changed. Update Cancelled. :(')
 
+    if not dv.get_yes_no(f'Please confirm updating Student ID #{student_id} {first_name} {last_name}'):
+        print('Update Cancelled')
+        return
     return
 
 
@@ -162,6 +170,10 @@ def delete_student(students):
 
     print('Delete Student')
     print('--------------')
+
+    #if not dv.get_yes_no(f'Please confirm deleting Student ID #{student_id} {first_name} {last_name}'):
+     #   print('Update Cancelled')
+      #  return
 
     return
 
