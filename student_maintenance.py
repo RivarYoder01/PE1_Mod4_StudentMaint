@@ -88,7 +88,7 @@ def add_student(students, next_student_id):
     return
 
 
-def update_student(students):
+def update_student(students, student_id):
     """
     It will first check to see if there is any student data, and notify the user if no data is found.
     It will then prompt the user for a valid student ID to be updated from the 2D list
@@ -106,6 +106,7 @@ def update_student(students):
 	Student ID #1 Debbie Johnson was update to Deb Johnson
 	Press Enter to continue...
 	
+    :param student_id: 
     :param students: 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :return: None
     """
@@ -116,6 +117,23 @@ def update_student(students):
 
     print('Update Student')
     print('--------------')
+
+    # student_id = input('Please enter the Student ID to be updated:')
+
+    student = students[student_id]
+    first_name, last_name = student.values()
+
+    new_first_name = input(f'Please enter the Student\'s First Name or press enter to keep {first_name}: ').title()
+    new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep: {last_name}').title()
+
+    if new_first_name > '':
+        student['first_name'] = new_first_name
+
+    if new_last_name > '':
+        student['last_name'] = new_last_name
+
+    if new_first_name == '' and new_last_name == '':
+        print('No Data Changed. Update Cancelled. :(')
 
     return
 
