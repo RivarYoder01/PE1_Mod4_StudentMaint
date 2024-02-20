@@ -47,7 +47,7 @@ def list_students(students):
     # for student_id, student_name in students.items():
     # first_name, last_name = student_name.values
     # student_name(**students)
-    while True:
+
         # this will loop through the tuple to display all the students inside
         # ...
 
