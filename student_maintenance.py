@@ -47,7 +47,7 @@ def list_students(students):
     print(f'{"List Students":>10}')
     print(f'{"-------------":>10}')
 
-    print(f'{"ID": >5} {"First Name":>13} {"Last Name":>10}')
+    print(f'{"ID":>5} {"First Name":>13} {"Last Name":>10}')
     print('=' * DASH_LENGTH)
 
     for id, student_data in students.items():
@@ -55,8 +55,6 @@ def list_students(students):
         first_name = first_name.title()
         last_name = last_name.title()
         print(f'{id:>5} {first_name:>10} {last_name:>10}')
-
-    input("Press enter to continue...")
 
 
 def add_student(students, next_student_id):
