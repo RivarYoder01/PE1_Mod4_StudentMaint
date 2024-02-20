@@ -82,8 +82,8 @@ def add_student(students, next_student_id):
     print('Add Student')
     print('-----------')
 
-    first_name = input('Enter the Students First Name:')
-    last_name = input('Enter the Students Last Name:')
+    first_name = dv.get_string('Enter the Student\'s First Name').title()
+    last_name = dv.get_string('Enter the Student\'s Last Name').title()
 
     students[next_student_id] = {'first_name': first_name, 'last_name': last_name}
 
@@ -109,8 +109,7 @@ def update_student(students):
 
 	Student ID #1 Debbie Johnson was update to Deb Johnson
 	Press Enter to continue...
-	
-    :param student_id: 
+
     :param students: 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :return: None
     """
@@ -127,8 +126,11 @@ def update_student(students):
     student = students[student_id]
     first_name, last_name = student.values()
 
-    new_first_name = input(f'Please enter the Student\'s First Name or press enter to keep {first_name}: ').title()
-    new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep {last_name}: ').title()
+    new_first_name = dv.get_string(f'Please enter the Student\'s First Name or press enter to keep {first_name} ')
+    new_last_name = dv.get_string(f'Please enter the Student\'s Last Name or press enter to keep {last_name} ')
+
+    new_first_name = new_first_name.title()
+    new_last_name = new_last_name.title()
 
     if new_first_name > '':
         student['first_name'] = new_first_name
@@ -139,9 +141,11 @@ def update_student(students):
     if new_first_name == '' and new_last_name == '':
         print('No Data Changed. Update Cancelled. :(')
 
-    if not dv.get_yes_no(f'Please confirm updating Student ID #{student_id} {first_name} {last_name}'):
-        print('Update Cancelled')
+    if not dv.get_yes_no(f'Please confirm updating Student ID #{student_id} {first_name} {last_name} to '
+                         f'{new_first_name} {new_last_name}'):
+        print("Update Cancelled")
         return
+
     return
 
 
