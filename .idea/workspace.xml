@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3b21de-c858-43a1-83b7-c7028f3c296c" name="Changes" comment="finished delete_student">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ec3b21de-c858-43a1-83b7-c7028f3c296c" name="Changes" comment="added a little formatting stuff to list_students so that if there are no students inside the 2d dictionary, then it will say there are no students to list">
       <change beforePath="$PROJECT_DIR$/student_maintenance.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_maintenance.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708533362520</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added a little formatting stuff to list_students so that if there are no students inside the 2d dictionary, then it will say there are no students to list">
+      <option name="closed" value="true" />
+      <created>1708533831594</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708533831594</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,6 +163,7 @@
     <MESSAGE value="removed while loop in list students" />
     <MESSAGE value="fixed some of the formatting issues in list_students" />
     <MESSAGE value="finished delete_student" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished delete_student" />
+    <MESSAGE value="added a little formatting stuff to list_students so that if there are no students inside the 2d dictionary, then it will say there are no students to list" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a little formatting stuff to list_students so that if there are no students inside the 2d dictionary, then it will say there are no students to list" />
   </component>
 </project>
