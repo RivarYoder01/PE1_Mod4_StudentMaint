@@ -144,6 +144,7 @@ def update_student(students):
         print("Update Cancelled")
         return
 
+    print(f'Student ID #{student_id} {new_first_name} {new_last_name} was updated.')
     return
 
 
@@ -173,10 +174,16 @@ def delete_student(students):
     print('Delete Student')
     print('--------------')
 
-    #if not dv.get_yes_no(f'Please confirm deleting Student ID #{student_id} {first_name} {last_name}'):
-     #   print('Update Cancelled')
-      #  return
+    student_id = dv.get_num('Please enter the Student ID to be deleted', data_type="int")
+    student = students[student_id]
+    first_name, last_name = student.values()
 
+    if not dv.get_yes_no(f'Please confirm deleting Student ID #{student_id} {first_name} {last_name}'):
+        print('Delete Cancelled')
+        return
+
+    print(f'Student ID #{student_id} {first_name} {last_name} was deleted.')
+    del students[student_id]
     return
 
 
