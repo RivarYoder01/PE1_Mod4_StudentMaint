@@ -43,6 +43,9 @@ def list_students(students):
     :param students: 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :return: None
     """
+    if len(students) == 0:
+        print('There are no students to list.')
+        return
 
     print(f'{"List Students":>10}')
     print(f'{"-------------":>10}')
