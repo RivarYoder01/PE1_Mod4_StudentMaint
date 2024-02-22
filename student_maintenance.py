@@ -34,7 +34,7 @@ def list_students(students):
     It will notify the student if there is no data found.
 	
 	  ID First Name      Last Name      
-	==== =============== ===============
+    ==== =============== ===============
 	   1 Debbie          Johnson        
 	   2 Sam             Jones          
 	   3 Billy           Bob            
@@ -52,11 +52,11 @@ def list_students(students):
     print(f'{"ID":>5} {"First Name":>13} {"Last Name":>10}')
     print('=' * DASH_LENGTH)
 
-    for id, student_data in students.items():
+    for identity, student_data in students.items():
         first_name, last_name = student_data.values()
         first_name = first_name.title()
         last_name = last_name.title()
-        print(f'{id:>5} {first_name:>10} {last_name:>10}')
+        print(f'{identity:>5} {first_name:>10} {last_name:>10}')
 
 
 def add_student(students, next_student_id):
@@ -123,14 +123,15 @@ def update_student(students):
 
     student_id = dv.get_num('Please enter the Student ID to be updated', data_type="int")
 
+    if student_id not in students:
+        print("Student ID", {student_id}, "doesnt exist")
+        return
+
     student = students[student_id]
     first_name, last_name = student.values()
 
-    new_first_name = input(f'Please enter the Student\'s First Name or press enter to keep {first_name} ')
-    new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep {last_name} ')
-
-    new_first_name = new_first_name.title()
-    new_last_name = new_last_name.title()
+    new_first_name = input(f'Please enter the Student\'s First Name or press enter to keep {first_name} ').title()
+    new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep {last_name} ').title()
 
     if new_first_name > '':
         student['first_name'] = new_first_name
@@ -148,7 +149,6 @@ def update_student(students):
 
     print('-' * DASH_LENGTH)
     print(f'Student ID #{student_id} {new_first_name} {new_last_name} was updated.')
-    print('-' * DASH_LENGTH)
     return
 
 
@@ -179,6 +179,11 @@ def delete_student(students):
     print(f'{"-------------":>25}')
 
     student_id = dv.get_num('Please enter the Student ID to be deleted', data_type="int")
+
+    if student_id not in students:
+        print("Student ID", {student_id}, "doesnt exist")
+        return
+
     student = students[student_id]
     first_name, last_name = student.values()
 
@@ -188,7 +193,6 @@ def delete_student(students):
 
     print('-' * DASH_LENGTH)
     print(f'Student ID #{student_id} {first_name} {last_name} was deleted.')
-    print('-' * DASH_LENGTH)
     del students[student_id]
     return
 
