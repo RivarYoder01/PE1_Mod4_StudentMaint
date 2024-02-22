@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3b21de-c858-43a1-83b7-c7028f3c296c" name="Changes" comment="fixed update_student so that they can skip if needed">
+    <list default="true" id="ec3b21de-c858-43a1-83b7-c7028f3c296c" name="Changes" comment="fixed some of the formatting so it looks prettier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_maintenance.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_maintenance.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708616456091</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed some of the formatting so it looks prettier">
+      <option name="closed" value="true" />
+      <created>1708617183053</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708617183053</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,6 +189,7 @@
     <MESSAGE value="finished delete_student" />
     <MESSAGE value="added a little formatting stuff to list_students so that if there are no students inside the 2d dictionary, then it will say there are no students to list" />
     <MESSAGE value="fixed update_student so that they can skip if needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed update_student so that they can skip if needed" />
+    <MESSAGE value="fixed some of the formatting so it looks prettier" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some of the formatting so it looks prettier" />
   </component>
 </project>
