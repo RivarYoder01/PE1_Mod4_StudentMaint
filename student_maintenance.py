@@ -32,12 +32,12 @@ def list_students(students):
     """
     Display the all student information stored in a 2D list (id, first name, last name)
     It will notify the student if there is no data found.
-	
-	  ID First Name      Last Name      
+
+      ID First Name      Last Name
     ==== =============== ===============
-	   1 Debbie          Johnson        
-	   2 Sam             Jones          
-	   3 Billy           Bob            
+       1 Debbie          Johnson
+       2 Sam             Jones
+       3 Billy           Bob
 
     :param students: 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :return: None
@@ -63,17 +63,17 @@ def add_student(students, next_student_id):
     """
     Display the all student information stored in a 2D list.  It will increment the last student id by one
     and use it as the new student's id.  It also, displays that the student was successfully added.
-	
-	Add Student
-	-----------
-	Please enter the Student's First Name: <example if the user enters nothing>
-	Invalid Input: Please enter a value!
-	Please enter the Student's First Name: Debbie
-	Please enter the Student's Last Name: Johnson
 
-	Student ID #1 Debbie Johnson was added.
-	Press Enter to continue...
-	
+    Add Student
+    -----------
+    Please enter the Student's First Name: <example if the user enters nothing>
+    Invalid Input: Please enter a value!
+    Please enter the Student's First Name: Debbie
+    Please enter the Student's Last Name: Johnson
+
+    Student ID #1 Debbie Johnson was added.
+    Press Enter to continue...
+
     :param students: 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :param next_student_id: the next student id to be used for the add function
     :return: None
@@ -99,16 +99,16 @@ def update_student(students):
     It handles for non-numeric data, and student IDs that do not exist via the find_student_index
     It will prompt the user to confirm they want to update the selected student, and then let the user know
     if the user was successfully updated.
-	
-	Update Student
-	--------------
-	Please enter the Student ID to be updated: 1
-	Do you want to update Student ID #1 Debbie Johnson (y=Yes, n=No): y
-	Please enter the Student's First Name or press enter to keep Debbie: Deb
-	Please enter the Student's Last Name or press enter to keep Johnson: <no data entered>
 
-	Student ID #1 Debbie Johnson was update to Deb Johnson
-	Press Enter to continue...
+    Update Student
+    --------------
+    Please enter the Student ID to be updated: 1
+    Do you want to update Student ID #1 Debbie Johnson (y=Yes, n=No): y
+    Please enter the Student's First Name or press enter to keep Debbie: Deb
+    Please enter the Student's Last Name or press enter to keep Johnson: <no data entered>
+
+    Student ID #1 Debbie Johnson was update to Deb Johnson
+    Press Enter to continue...
 
     :param students: 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :return: None
@@ -159,14 +159,14 @@ def delete_student(students):
     It handles for non-numeric data, and student IDs that do not exist via the find_student_index
     It will prompt the user to confirm they want to delete the selected student, and then let the user know
     if the user was successfully deleted.
-	
-	Delete Student
-	--------------
-	Please enter the Student ID to be deleted: 2
-	Please confirm deleting Student ID #2 Sam Jones (y=Yes, n=No): y
-	Student ID #2 Sam Jones was deleted.
-	Press Enter to continue...
-	
+
+    Delete Student
+    --------------
+    Please enter the Student ID to be deleted: 2
+    Please confirm deleting Student ID #2 Sam Jones (y=Yes, n=No): y
+    Student ID #2 Sam Jones was deleted.
+    Press Enter to continue...
+
     :param students: students 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :return: None
     """
