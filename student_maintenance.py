@@ -82,9 +82,11 @@ def add_student(students, next_student_id):
     print(f'{"Add Student":>25}')
     print(f'{"-------------":>25}')
 
+    # Runs function to get the first and last name from the user
     first_name = dv.get_string('Enter the Student\'s First Name').title()
     last_name = dv.get_string('Enter the Student\'s Last Name').title()
 
+    # Stores the students names in dictionary
     students[next_student_id] = {'first_name': first_name, 'last_name': last_name}
 
     print('-' * DASH_LENGTH)
@@ -121,27 +123,30 @@ def update_student(students):
     print(f'{"Update Students":>25}')
     print(f'{"-------------":>25}')
 
+    # stores ID to reference in dictionary
     student_id = dv.get_num('Please enter the Student ID to be updated', data_type="int")
 
-    if student_id not in students:
+    if student_id not in students:  # Checks that the entered ID exists in dictionary, returns if there is no ID
         print("Student ID", {student_id}, "doesnt exist")
         return
 
     student = students[student_id]
     first_name, last_name = student.values()
 
+    # User inputs the students names to update, input used so that the program can take an empty object
     new_first_name = input(f'Please enter the Student\'s First Name or press enter to keep {first_name} ').title()
     new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep {last_name} ').title()
 
     if new_first_name > '':
-        student['first_name'] = new_first_name
+        student['first_name'] = new_first_name  # Keeps the already stored first name
 
     if new_last_name > '':
-        student['last_name'] = new_last_name
+        student['last_name'] = new_last_name  # Keeps the already stored last name
 
     if new_first_name == '' and new_last_name == '':
-        print('No Data Changed. Update Cancelled. :(')
+        print('No Data Changed. Update Cancelled.')  # Cancelles update if nothing is changed
 
+    # User must confirm update changes, no changes will be made if the user selects no
     if not dv.get_yes_no(f'Please confirm updating Student ID #{student_id} {first_name} {last_name} to '
                          f'{new_first_name} {new_last_name}'):
         print("Update Cancelled")
