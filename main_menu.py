@@ -10,7 +10,7 @@ This module contains the functions for displaying the main menu and running the 
 # followed by third-party modules
 # followed by any changes to the path
 # your own modules.
-import student_maintenance as sm    # student add, update, delete, list
+import student_maintenance as sm  # student add, update, delete, list
 import data_validation as dv  # user input data validation
 
 # the following are module level dunders (metadata) for the authorship information
@@ -18,6 +18,8 @@ __author__ = 'Debbie Johnson'
 __version__ = '1.0'
 __date__ = '2024.02.12'
 __status__ = 'Development'
+
+DASH_LENGTH = 35
 
 
 def display_menu():
@@ -85,7 +87,9 @@ def main():
         else:
             print('Not a valid menu option.')
 
+        print('-' * DASH_LENGTH)
         input('Press Enter to continue...')
+        print('-' * DASH_LENGTH)
         print()
 
     print('Bye!')

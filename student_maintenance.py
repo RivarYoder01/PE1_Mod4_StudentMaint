@@ -26,7 +26,6 @@ __date__ = '2024.02.12'
 __status__ = 'Development'
 
 DASH_LENGTH = 35
-COLUMN_LENGTH = 60
 
 
 def list_students(students):
@@ -47,8 +46,8 @@ def list_students(students):
         print('There are no students to list.')
         return
 
-    print(f'{"List Students":>10}')
-    print(f'{"-------------":>10}')
+    print(f'{"List Students":>25}')
+    print(f'{"-------------":>25}')
 
     print(f'{"ID":>5} {"First Name":>13} {"Last Name":>10}')
     print('=' * DASH_LENGTH)
@@ -80,16 +79,16 @@ def add_student(students, next_student_id):
     :return: None
     """
 
-    print('Add Student')
-    print('-----------')
+    print(f'{"Add Student":>25}')
+    print(f'{"-------------":>25}')
 
     first_name = dv.get_string('Enter the Student\'s First Name').title()
     last_name = dv.get_string('Enter the Student\'s Last Name').title()
 
     students[next_student_id] = {'first_name': first_name, 'last_name': last_name}
 
+    print('-' * DASH_LENGTH)
     print('Student ID#', next_student_id, first_name, last_name, 'Was Added')
-
     return
 
 
@@ -119,8 +118,8 @@ def update_student(students):
         print('There are no students to update.')
         return
 
-    print('Update Student')
-    print('--------------')
+    print(f'{"Update Students":>25}')
+    print(f'{"-------------":>25}')
 
     student_id = dv.get_num('Please enter the Student ID to be updated', data_type="int")
 
@@ -147,7 +146,9 @@ def update_student(students):
         print("Update Cancelled")
         return
 
+    print('-' * DASH_LENGTH)
     print(f'Student ID #{student_id} {new_first_name} {new_last_name} was updated.')
+    print('-' * DASH_LENGTH)
     return
 
 
@@ -174,8 +175,8 @@ def delete_student(students):
         print('There are no students to delete.')
         return
 
-    print('Delete Student')
-    print('--------------')
+    print(f'{"Delete Student":>25}')
+    print(f'{"-------------":>25}')
 
     student_id = dv.get_num('Please enter the Student ID to be deleted', data_type="int")
     student = students[student_id]
@@ -185,7 +186,9 @@ def delete_student(students):
         print('Delete Cancelled')
         return
 
+    print('-' * DASH_LENGTH)
     print(f'Student ID #{student_id} {first_name} {last_name} was deleted.')
+    print('-' * DASH_LENGTH)
     del students[student_id]
     return
 
