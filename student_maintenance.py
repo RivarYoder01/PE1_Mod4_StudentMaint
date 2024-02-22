@@ -127,8 +127,8 @@ def update_student(students):
     student = students[student_id]
     first_name, last_name = student.values()
 
-    new_first_name = dv.get_string(f'Please enter the Student\'s First Name or press enter to keep {first_name} ')
-    new_last_name = dv.get_string(f'Please enter the Student\'s Last Name or press enter to keep {last_name} ')
+    new_first_name = input(f'Please enter the Student\'s First Name or press enter to keep {first_name} ')
+    new_last_name = input(f'Please enter the Student\'s Last Name or press enter to keep {last_name} ')
 
     new_first_name = new_first_name.title()
     new_last_name = new_last_name.title()
