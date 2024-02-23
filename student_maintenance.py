@@ -42,6 +42,7 @@ def list_students(students):
     :param students: 2D dictionary {id: {'first_name': value}, {'last_name': value}}
     :return: None
     """
+    # Accounts for if there are no students in the dictionary
     if len(students) == 0:
         print('There are no students to list.')
         return
@@ -52,6 +53,7 @@ def list_students(students):
     print(f'{"ID":>5} {"First Name":>13} {"Last Name":>10}')
     print('=' * DASH_LENGTH)
 
+    # Gathers information from the dictionary so that the students can be displayed, also accounts for capitalization
     for identity, student_data in students.items():
         first_name, last_name = student_data.values()
         first_name = first_name.title()
@@ -123,7 +125,7 @@ def update_student(students):
     print(f'{"Update Students":>25}')
     print(f'{"-------------":>25}')
 
-    # stores ID to reference in dictionary
+    # Stores ID to reference in dictionary
     student_id = dv.get_num('Please enter the Student ID to be updated', data_type="int")
 
     if student_id not in students:  # Checks that the entered ID exists in dictionary, returns if there is no ID
@@ -176,6 +178,8 @@ def delete_student(students):
     :return: None
     """
 
+    # If there are no students in the dictionary, then the program will display a message saying that there
+    # Are no students to delete
     if len(students) == 0:
         print('There are no students to delete.')
         return
@@ -183,25 +187,28 @@ def delete_student(students):
     print(f'{"Delete Student":>25}')
     print(f'{"-------------":>25}')
 
+    # Gets the user's input on which student they want to delete and accounts for numeric input
     student_id = dv.get_num('Please enter the Student ID to be deleted', data_type="int")
 
+    # Accounts for if the user chooses an ID that doesn't exist
     if student_id not in students:
         print("Student ID", {student_id}, "doesnt exist")
         return
 
-    student = students[student_id]
-    first_name, last_name = student.values()
+    student = students[student_id] # Stores the student id from the dictionary to student
+    first_name, last_name = student.values() # Stores the values from the dictionary to the first and last name
 
+    # Gets the user to confirm if they want to delete the student or not, otherwise the delete is canceled
     if not dv.get_yes_no(f'Please confirm deleting Student ID #{student_id} {first_name} {last_name}'):
         print('Delete Cancelled')
         return
 
     print('-' * DASH_LENGTH)
     print(f'Student ID #{student_id} {first_name} {last_name} was deleted.')
-    del students[student_id]
+    del students[student_id] # Deletes the student from the dictionary
     return
 
 
-# if this is the module where the program started from, then display the module docstring
+# If this is the module where the program started from, then display the module docstring
 if __name__ == '__main__':
     help('student_maintenance')

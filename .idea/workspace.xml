@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3b21de-c858-43a1-83b7-c7028f3c296c" name="Changes" comment="Error handeling and testing. Fixed range issues in update and delete">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ec3b21de-c858-43a1-83b7-c7028f3c296c" name="Changes" comment="fixed some of the formatting">
       <change beforePath="$PROJECT_DIR$/student_maintenance.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_maintenance.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
