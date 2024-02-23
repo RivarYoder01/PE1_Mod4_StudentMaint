@@ -195,17 +195,17 @@ def delete_student(students):
         print("Student ID", {student_id}, "doesnt exist")
         return
 
-    student = students[student_id] # Stores the student id from the dictionary to student
-    first_name, last_name = student.values() # Stores the values from the dictionary to the first and last name
+    student = students[student_id]  # Stores the student id from the dictionary to student
+    first_name, last_name = student.values()  # Stores the values from the dictionary to the first and last name
 
-    # Gets the user to confirm if they want to delete the student or not, otherwise the delete is canceled
+    # Gets the user to confirm if they want to delete the student or not, otherwise delete is canceled
     if not dv.get_yes_no(f'Please confirm deleting Student ID #{student_id} {first_name} {last_name}'):
         print('Delete Cancelled')
         return
 
     print('-' * DASH_LENGTH)
     print(f'Student ID #{student_id} {first_name} {last_name} was deleted.')
-    del students[student_id] # Deletes the student from the dictionary
+    del students[student_id]  # Deletes the student from the dictionary
     return
 
 
